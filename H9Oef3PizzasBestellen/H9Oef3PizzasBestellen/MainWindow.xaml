@@ -55,60 +55,60 @@
                 </Grid.RowDefinitions>
             </Grid>
             <WrapPanel Grid.Row="0">
-                <Button x:Name="firstMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="firstInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="firstPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="firstMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="firstNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="firstPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Quattro Stagioni (€12,5)" Width="150" Margin="2"/>
-                <Slider x:Name="firstSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="firstSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
             <WrapPanel Grid.Row="1">
-                <Button x:Name="secondMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="secondInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="secondPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="secondMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="secondNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="secondPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Capricciosa (€13,0)" Width="150" Margin="2"/>
-                <Slider x:Name="secondSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="secondSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
             <WrapPanel Grid.Row="2">
-                <Button x:Name="thirdMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="thirdInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="thirdPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="thirdMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="thirdNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="thirdPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Salami Al Fuoco (€12,0)" Width="150" Margin="2"/>
-                <Slider x:Name="thirdSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="thirdSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
             <WrapPanel Grid.Row="3">
-                <Button x:Name="fourthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="fourthInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="fourthPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="fourthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="fourthNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="fourthPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Prosciutto Cotto (€11,0)" Width="150" Margin="2"/>
-                <Slider x:Name="fourthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="fourthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
             <WrapPanel Grid.Row="4">
-                <Button x:Name="fifthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="fifthInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="fifthPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="fifthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="fifthNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="fifthPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Quattro Fromaggi (€12,5)" Width="150" Margin="2"/>
-                <Slider x:Name="fifthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="fifthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
             <WrapPanel Grid.Row="5">
-                <Button x:Name="sixthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="sixthInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="sixthPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="sixthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="sixthNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="sixthPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Hawaï (€12,0)" Width="150" Margin="2"/>
-                <Slider x:Name="sixthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="sixthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
             <WrapPanel Grid.Row="6">
-                <Button x:Name="seventhMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
-                <TextBox x:Name="seventhInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
-                <Button x:Name="seventhPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="seventhMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3" Click="minusButton_Click"/>
+                <TextBox x:Name="seventhNumberTextBox" Text="" Height="20" Width="20" Margin="3" TextChanged="TextBox_TextChanged"/>
+                <Button x:Name="seventhPlusButton" Content="+" Height="20" Width="20" Margin="3" Click="plusButton_Click"/>
                 <Label Content="Margherita (€9,0)" Width="150" Margin="2"/>
-                <Slider x:Name="seventhSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="seventhSlider" Width="120" Margin="5" TickFrequency="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged"/>
             </WrapPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="2">
-            <CheckBox x:Name="firstExtraCheckBox" Content="Extra mozzarella (€0,5)" Margin="3"/>
-            <CheckBox x:Name="secondExtraCheckBox" Content="Extra salami (€0,5)" Margin="3"/>
-            <CheckBox x:Name="thirdExtraCheckBox" Content="Extra anjovis (€0,5)" Margin="3"/>
-            <CheckBox x:Name="fourthExtraCheckBox" Content="Extra artisjok (€0,5)" Margin="3"/>
+            <CheckBox x:Name="firstExtraCheckBox" Content="Extra mozzarella (€0,5)" Margin="3" Unchecked="checkBox_CheckedOrUnchcked" Checked="checkBox_CheckedOrUnchcked"/>
+            <CheckBox x:Name="secondExtraCheckBox" Content="Extra salami (€0,5)" Margin="3" Unchecked="checkBox_CheckedOrUnchcked" Checked="checkBox_CheckedOrUnchcked"/>
+            <CheckBox x:Name="thirdExtraCheckBox" Content="Extra anjovis (€0,5)" Margin="3" Unchecked="checkBox_CheckedOrUnchcked" Checked="checkBox_CheckedOrUnchcked"/>
+            <CheckBox x:Name="fourthExtraCheckBox" Content="Extra artisjok (€0,5)" Margin="3" Unchecked="checkBox_CheckedOrUnchcked" Checked="checkBox_CheckedOrUnchcked"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0">
             <Label Content="E-mail" FontSize="16" Margin="5" Height="32"/>
@@ -119,11 +119,11 @@
             <TextBox x:Name="addressTextBox" Text="" Margin="5"/>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Button x:Name="orderButton" Content="Bestel Pizza's" Width="230" Height="40" Margin="10"/>
+            <Button x:Name="orderButton" Content="Bestel Pizza's" Width="230" Height="40" Margin="10" Click="orderButton_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="5" Grid.Column="0">
             <Label Content="Woonplaats" FontSize="16" Margin="5" Height="32"/>
-            <TextBox x:Name="locationTextBox" Text="" Margin="5"/>
+            <TextBox x:Name="cityTextBox" Text="" Margin="5"/>
         </StackPanel>
         <StackPanel Grid.Row="5" Grid.Column="1">
             <Label x:Name="summaryLabel" Content="" Margin="5"/>
