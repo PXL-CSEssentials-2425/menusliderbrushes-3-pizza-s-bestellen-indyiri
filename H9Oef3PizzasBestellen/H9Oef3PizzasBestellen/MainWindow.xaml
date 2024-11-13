@@ -5,8 +5,135 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:H9Oef3PizzasBestellen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Pizza's bij Bruno" Height="850" Width="1000" Loaded="Window_Loaded">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Pizza's Bij Bruno" FontSize="16" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <Image Stretch="Uniform" Width="130" Margin="5" Source="D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza1.jpg"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="Naam" FontSize="16" Margin="5" Height="32"/>
+            <TextBox x:Name="nameTextBox" Text="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="Pizza's" FontSize="16" Margin="5" Height="32"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Label Content="Toppings" FontSize="16" Margin="5" Height="32"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <Label Content="Telefoonnummer" FontSize="16" Margin="5" Height="32"/>
+            <TextBox x:Name="phoneNumberTextBox" Text="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <WrapPanel Grid.Row="0">
+                <Button x:Name="firstMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="firstInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="firstPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Quattro Stagioni (€12,5)" Width="150" Margin="2"/>
+                <Slider x:Name="firstSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="1">
+                <Button x:Name="secondMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="secondInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="secondPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Capricciosa (€13,0)" Width="150" Margin="2"/>
+                <Slider x:Name="secondSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="2">
+                <Button x:Name="thirdMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="thirdInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="thirdPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Salami Al Fuoco (€12,0)" Width="150" Margin="2"/>
+                <Slider x:Name="thirdSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="3">
+                <Button x:Name="fourthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="fourthInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="fourthPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Prosciutto Cotto (€11,0)" Width="150" Margin="2"/>
+                <Slider x:Name="fourthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="4">
+                <Button x:Name="fifthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="fifthInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="fifthPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Quattro Fromaggi (€12,5)" Width="150" Margin="2"/>
+                <Slider x:Name="fifthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="5">
+                <Button x:Name="sixthMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="sixthInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="sixthPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Hawaï (€12,0)" Width="150" Margin="2"/>
+                <Slider x:Name="sixthSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="6">
+                <Button x:Name="seventhMinusButton" Content="-" Height="20" Width="20" Margin="20,3,3,3"/>
+                <TextBox x:Name="seventhInputTextBox" Text="" Height="20" Width="20" Margin="3"/>
+                <Button x:Name="seventhPlusButton" Content="+" Height="20" Width="20" Margin="3"/>
+                <Label Content="Margherita (€9,0)" Width="150" Margin="2"/>
+                <Slider x:Name="seventhSlider" Width="120" Margin="5" TickFrequency="1" Minimum="1" Maximum="10" IsSnapToTickEnabled="True"/>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <CheckBox x:Name="firstExtraCheckBox" Content="Extra mozzarella (€0,5)" Margin="3"/>
+            <CheckBox x:Name="secondExtraCheckBox" Content="Extra salami (€0,5)" Margin="3"/>
+            <CheckBox x:Name="thirdExtraCheckBox" Content="Extra anjovis (€0,5)" Margin="3"/>
+            <CheckBox x:Name="fourthExtraCheckBox" Content="Extra artisjok (€0,5)" Margin="3"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Label Content="E-mail" FontSize="16" Margin="5" Height="32"/>
+            <TextBox x:Name="emailTextBox" Text="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="0">
+            <Label Content="Adres" FontSize="16" Margin="5" Height="32"/>
+            <TextBox x:Name="addressTextBox" Text="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="orderButton" Content="Bestel Pizza's" Width="230" Height="40" Margin="10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="0">
+            <Label Content="Woonplaats" FontSize="16" Margin="5" Height="32"/>
+            <TextBox x:Name="locationTextBox" Text="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="1">
+            <Label x:Name="summaryLabel" Content="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="0">
+            <Label Content="Postcode" FontSize="16" Margin="5" Height="32"/>
+            <TextBox x:Name="postalCodeTextBox" Text="" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="2">
+            <Label x:Name="resultLabel" Content="" Margin="5"/>
+        </StackPanel>
     </Grid>
 </Window>

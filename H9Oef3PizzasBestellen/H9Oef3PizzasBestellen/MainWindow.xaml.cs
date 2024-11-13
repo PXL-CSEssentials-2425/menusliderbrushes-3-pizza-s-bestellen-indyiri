@@ -20,5 +20,20 @@ namespace H9Oef3PizzasBestellen
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            firstInputTextBox.Text = "0";
+            secondInputTextBox.Text= "0";
+            thirdInputTextBox.Text= "0";
+            fourthInputTextBox.Text= "0";
+            fifthInputTextBox.Text= "0";
+            sixthInputTextBox.Text= "0";
+            seventhInputTextBox.Text= "0";
+
+            nameTextBox.Focus();
+
+            summaryLabel.Content = "Onze pizza's zijn de beste! \nHet is wetenschappelijk bewezen dat pizza's goed zijn voor de gezondheid.";
+        }
     }
 }
