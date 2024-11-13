@@ -52,6 +52,9 @@ namespace H9Oef3PizzasBestellen
 
         private double totalPrice;
 
+        Random random = new Random();
+        Image image = new Image(); 
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             firstNumberTextBox.Text = inputFirstNumber;
@@ -61,6 +64,25 @@ namespace H9Oef3PizzasBestellen
             fifthNumberTextBox.Text= inputFifthNumber;
             sixthNumberTextBox.Text= inputSixthNumber;
             seventhNumberTextBox.Text= inputSeventhNumber;
+
+            int randomImage = random.Next(0,3);
+
+            if (randomImage == 0)
+            {
+                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza1.jpg", UriKind.RelativeOrAbsolute));
+            }
+            else if (randomImage == 1)
+            {
+                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza2.jpg", UriKind.RelativeOrAbsolute));
+            }
+            else if (randomImage == 2)
+            {
+                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza3.jpg", UriKind.RelativeOrAbsolute));
+            }
+            else if (randomImage == 3)
+            {
+                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza4.jpg", UriKind.RelativeOrAbsolute));
+            }
 
             nameTextBox.Focus();
 
