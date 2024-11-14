@@ -65,7 +65,7 @@ namespace H9Oef3PizzasBestellen
             sixthNumberTextBox.Text= inputSixthNumber;
             seventhNumberTextBox.Text= inputSeventhNumber;
 
-            int randomImage = random.Next(0,3);
+            int randomImage = random.Next(0,4);
 
             if (randomImage == 0)
             {
