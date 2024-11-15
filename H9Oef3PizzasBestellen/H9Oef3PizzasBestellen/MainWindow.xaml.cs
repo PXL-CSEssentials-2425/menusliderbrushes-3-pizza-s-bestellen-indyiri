@@ -53,7 +53,9 @@ namespace H9Oef3PizzasBestellen
         private double totalPrice;
 
         Random random = new Random();
-        Image image = new Image(); 
+
+        StringBuilder contactInfoBuilder = new StringBuilder();
+        StringBuilder orderBuilder = new StringBuilder();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -69,19 +71,19 @@ namespace H9Oef3PizzasBestellen
 
             if (randomImage == 0)
             {
-                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza1.jpg", UriKind.RelativeOrAbsolute));
+                displayedImage.Source = new BitmapImage(new Uri("Images/Pizza1.jpg", UriKind.Relative));
             }
             else if (randomImage == 1)
             {
-                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza2.jpg", UriKind.RelativeOrAbsolute));
+                displayedImage.Source = new BitmapImage(new Uri("Images/Pizza2.jpg", UriKind.Relative));
             }
             else if (randomImage == 2)
             {
-                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza3.jpg", UriKind.RelativeOrAbsolute));
+                displayedImage.Source = new BitmapImage(new Uri("Images/Pizza3.jpg", UriKind.Relative));
             }
             else if (randomImage == 3)
             {
-                displayedImage.Source = new BitmapImage(new Uri(@"D:\Documenten\Studeren 2024-2025\Graduaat Programmeren\1ste Jaar\C# Essentials\Visual Studio projecten\H9Oef3PizzasBestellen\H9Oef3PizzasBestellen\Pizza4.jpg", UriKind.RelativeOrAbsolute));
+                displayedImage.Source = new BitmapImage(new Uri("Images/Pizza4.jpg", UriKind.Relative));
             }
 
             nameTextBox.Focus();
@@ -108,6 +110,7 @@ namespace H9Oef3PizzasBestellen
 
             bool isInputPhoneNumberValid = int.TryParse(inputPhoneNumber, out phoneNumber);
             bool isInputPostalCodeValid = int.TryParse(inputPostalCode, out postalCode);
+            bool isInputEmailValid = email.Contains("@") && email.Contains(".");
 
             bool isInputFirstNumberValid = int.TryParse(inputFirstNumber, out firstNumber);
             bool isInputSecondNumberValid = int.TryParse(inputSecondNumber, out secondNumber);
@@ -123,15 +126,19 @@ namespace H9Oef3PizzasBestellen
             }
             else
             {
-                if (isInputPostalCodeValid == false || isInputPhoneNumberValid == false)
+                if (isInputPostalCodeValid == false || isInputPhoneNumberValid == false || isInputEmailValid == false)
                 {
-                    MessageBox.Show("Zorg dat de postcode en telefoonnummer geldige waarden zijn!", "Foutive invoer", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Zorg dat de postcode en telefoonnummer geldige waarden zijn en het emailadres een geldig emailadres is!", "Foutive invoer", MessageBoxButton.OK, MessageBoxImage.Error);
 
                     if (isInputPostalCodeValid == false)
                     {
                         postalCodeTextBox.Focus();
                     }
-                    else 
+                    else if (isInputEmailValid == false)
+                    {
+                        emailTextBox.Focus();
+                    }
+                    else
                     {
                         phoneNumberTextBox.Focus();
                     }
@@ -151,10 +158,33 @@ namespace H9Oef3PizzasBestellen
                         else
                         {
                             totalPrice = (firstNumber * 12.5) + (secondNumber * 13) + (thirdNumber * 12) + (fourthNumber * 11) + (fifthNumber * 12.5) + (sixthNumber * 12) + (seventhNumber * 9) + firstExtra + secondExtra + thirdExtra + fourthExtra;
+                            
+                            // Zonder stringBuilder:
+                            // summaryLabel.Content = $"Naam: {name} \nTelefoonnummer: {inputPhoneNumber} \nE-mail: {email} \nAdres: {address} \nWoonplaats: {city} - {inputPostalCode}";
+                            // resultLabel.Content = $"U heeft de volgende pizza's besteld \n--------------------- \n{firstNumber} x Quattro Stagioni \n{secondNumber} x Capricciosa \n{thirdNumber} x Salami \n{fourthNumber} x Prosciutto \n{fifthNumber} x Quattro Fromaggi \n{sixthNumber} x Hawaï \n{seventhNumber} x Margherita \nTotaalbedrag = €{totalPrice}";
 
-                            summaryLabel.Content = $"Naam: {name} \nTelefoonnummer: {inputPhoneNumber} \nE-mail: {email} \nAdres: {address} \nWoonplaats: {city} - {inputPostalCode}";
+                            // Met stringBuilder:
+                            contactInfoBuilder.AppendLine($"Naam: {name}");
+                            contactInfoBuilder.AppendLine($"Telefoonnummer: {inputPhoneNumber}");
+                            contactInfoBuilder.AppendLine($"E-mail: {email}");
+                            contactInfoBuilder.AppendLine($"Adres: {address}");
+                            contactInfoBuilder.AppendLine($"Woonplaats: {city} - {inputPostalCode}");
+                            
+                            summaryLabel.Content = contactInfoBuilder.ToString();
 
-                            resultLabel.Content = $"U heeft de volgende pizza's besteld \n--------------------- \n{firstNumber} x Quattro Stagioni \n{secondNumber} x Capricciosa \n{thirdNumber} x Salami \n{fourthNumber} x Prosciutto \n{fifthNumber} x Quattro Fromaggi \n{sixthNumber} x Hawaï \n{seventhNumber} x Margherita \nTotaalbedrag = €{totalPrice}";
+                            orderBuilder.AppendLine($"U heeft de volgende pizza's besteld:");
+                            orderBuilder.AppendLine($"------------------------------------");
+                            orderBuilder.AppendLine($"{firstNumber} x Quattro Stagioni");
+                            orderBuilder.AppendLine($"{secondNumber} x Capricciosa");
+                            orderBuilder.AppendLine($"{thirdNumber} x Salami");
+                            orderBuilder.AppendLine($"{fourthNumber} x Prosciutto");
+                            orderBuilder.AppendLine($"{fifthNumber} x Quattro Fromaggi");
+                            orderBuilder.AppendLine($"{sixthNumber} x Hawaï");
+                            orderBuilder.AppendLine($"{seventhNumber} x Margherita");
+                            orderBuilder.AppendLine($"Totaalbedrag = €{totalPrice}");
+
+                            resultLabel.Content= orderBuilder.ToString();
+
                         }         
                     }
                 }
